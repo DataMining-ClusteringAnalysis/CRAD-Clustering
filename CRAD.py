@@ -2,20 +2,8 @@ import os
 import sys
 sys.setrecursionlimit(100000)
 import numpy as np
-from scipy.spatial.distance import cdist
-import pandas as pd
-from sklearn.metrics import f1_score
-from sklearn.metrics import adjusted_rand_score
-from sklearn.metrics.cluster import adjusted_mutual_info_score
-from sklearn.metrics import pairwise_distances
-from sklearn.metrics import silhouette_score
-from sklearn.metrics import calinski_harabaz_score
 import math
-from sklearn.metrics.pairwise import euclidean_distances
-import itertools
-from sklearn import preprocessing
-from sklearn.metrics.pairwise import pairwise_distances
-from sklearn.cluster import KMeans
+import pandas as pd
 
 # An Automatic Self-Searching Algorithm of CRAD
 def _hist_find_new(l, MAX_STEP, n_bin):
