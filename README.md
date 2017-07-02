@@ -7,7 +7,7 @@ Python implementation of CRAD clustering algorithm (CRAD.py) and extended DBSCAN
 
 ## Documentation
 
-`For CRAD-Clustering:
+For CRAD-Clustering:
 
 Call the function `cal_adjM_cutOff(xxDist, StepSize, Nbin)` to calculate adjancey matrix
 where 
@@ -57,4 +57,4 @@ min_points - The minimum number of points to make a cluster
 
 Outputs:
 
-An array with either a cluster id number.`
+An array with either a cluster id number.
