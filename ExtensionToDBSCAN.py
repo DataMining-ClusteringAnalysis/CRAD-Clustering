@@ -69,6 +69,5 @@ Nbin - Number of bin in histogram to find optimal cut-off parameter
 min_points - The minimum number of points to make a cluster
 
 Outputs:
-An array with either a cluster id number or dbscan.NOISE (None) for each
-column vector in m.
+An array with either a cluster id number.
 '''
