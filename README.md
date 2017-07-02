@@ -7,7 +7,7 @@ Python implementation of CRAD clustering algorithm (CRAD.py) and extended DBSCAN
 
 ## Documentation
 
-For CRAD-Clustering:
+`For CRAD-Clustering:
 
 Call the function `cal_adjM_cutOff(xxDist, StepSize, Nbin)` to calculate adjancey matrix
 where 
@@ -26,9 +26,7 @@ An adjancey matrix
 
 
 
-Then you call function `clustering_(data, adj)` to get the final clustering result
-
-where 
+Then you call function `clustering_(data, adj)` to get the final clustering result, where 
 
 Inputs:
 
@@ -59,16 +57,4 @@ min_points - The minimum number of points to make a cluster
 
 Outputs:
 
-An array with either a cluster id number.
-
-
-'''
-To perform externsion of DBSCAN, simply call the function dbscan_newM(xxDist, StepSize, Nbin, min_points)
-Inputs:
-xxDist - A distance matrix using robust mahalanobis distance 
-StepSize - Maximum steps of neighborhood you check in histogram to find optimal cut-off parameter
-Nbin - Number of bin in histogram to find optimal cut-off parameter
-min_points - The minimum number of points to make a cluster
-Outputs:
-An array with either a cluster id number.
-'''
+An array with either a cluster id number.`
