@@ -109,6 +109,36 @@ def clustering_(data,adj):
                 
     return cl
 
+
+'''
+To perform CRAD, call the function cal_adjM_cutOff(xxDist, StepSize, Nbin) to calculate adjancey matrix
+where 
+
+Inputs:
+xxDist - A distance matrix using robust mahalanobis distance 
+StepSize - Maximum steps of neighborhood you check in histogram to find optimal cut-off parameter
+Nbin - Number of bin in histogram to find optimal cut-off parameter
+
+Outputs:
+An adjancey matrix
+
+Then you can call function clustering_(data, adj) to get clustering result
+where 
+
+Inputs:
+data - A m by n matrix where m corresponds to number of observations, and n corresponds to number of features.
+adj - An adjancey matrix which is calculated in above step.
+
+Output:
+An array with either a cluster id number.
+
+
+
+'''
+
+
+
+
 # data is a m by n matrix where m corresponds to number of observations, and n corresponds to number of features
 # calculate adjacency matrix where input xxDist is the distance matrix of the data using robust mahalanobis distance,
 # input StepSize as 1, and input Nbin as 200
