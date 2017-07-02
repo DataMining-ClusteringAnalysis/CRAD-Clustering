@@ -24,7 +24,9 @@ Outputs:
 
 An adjancey matrix
 
-Then you can call function clustering_(data, adj) to get clustering result
+
+
+Then you call function `clustering_(data, adj)` to get the final clustering result
 
 where 
 
@@ -37,6 +39,8 @@ adj - An adjancey matrix which is calculated in above step.
 Output:
 
 An array with either a cluster id number.
+
+
 
 
 For Extended DBSCAN:
