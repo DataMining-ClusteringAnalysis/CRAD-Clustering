@@ -17,30 +17,7 @@ from sklearn import preprocessing
 from sklearn.metrics.pairwise import pairwise_distances
 from sklearn.cluster import KMeans
 
-
-# import scipy as sp
-# from rpy2.robjects.packages import importr
-# import rpy2.robjects as ro
-# #import pandas.rpy.common as com
-# from rpy2.robjects.packages import importr
-# import rpy2.robjects.packages as r
-# from rpy2.robjects import pandas2ri
-# import itertools
-
-# utils = importr('utils')
-# utils.install_packages("fossil")
-# fossil = importr('fossil')
-# pandas2ri.activate()
-
-
-# utils.install_packages("robustbase")
-# robustbase = importr('robustbase')
-
-
-
-
-
-# for automatic cut off selection
+# An Automatic Self-Searching Algorithm of CRAD
 def _hist_find_new(l, MAX_STEP, n_bin):
     
     srch,perctl = np.histogram(l, bins=n_bin)
@@ -69,7 +46,7 @@ def _hist_find_new(l, MAX_STEP, n_bin):
     idx = np.where(l > key_perctl)[0].tolist()
     return idx
 
-
+# calculate adjacency matrix
 def cal_adjM_cutOff(xxDist, MAX_STEP, num_bin):
 
     adj = []
@@ -93,29 +70,23 @@ def cal_adjM_cutOff(xxDist, MAX_STEP, num_bin):
 
 
 
-# original method
-def cal_adj_M_orig(xxDist, theta):
+# original method - DBCA
+#def cal_adj_M_orig(xxDist, theta):
 
-    adj = []
-    for k in range(xxDist.shape[0]):
-
-        temp = [k]
-        l = pd.DataFrame(np.array(xxDist[k,]))
-
-        idx = np.where(l > theta)[0].tolist()
-
-        if k in idx:
-            idx.remove(k)
-
-        temp.extend(idx)
-
-        adj.append(temp)
-        
-    return adj
+#    adj = []
+#    for k in range(xxDist.shape[0]):
+#        temp = [k]
+#        l = pd.DataFrame(np.array(xxDist[k,]))
+#        idx = np.where(l > theta)[0].tolist()
+#        if k in idx:
+#            idx.remove(k)
+#        temp.extend(idx)
+#        adj.append(temp)       
+#    return adj
 
 
 
-#clustering algorithm
+
 def dfs(n, cl, adj, label):
 
 	if cl[n] == -1:
@@ -129,7 +100,7 @@ def dfs(n, cl, adj, label):
 				dfs(adj[n][j], cl, adj, label)
 
 	return
-
+# clustering algorithm CRAD
 def clustering_(data,adj):
     n = data.shape[0]
     cl = [-1]*n
