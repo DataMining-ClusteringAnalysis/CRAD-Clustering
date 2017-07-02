@@ -120,3 +120,15 @@ def clustering_(data,adj):
                 dfs(i, cl, adj, label)
                 
     return cl
+
+# data is a m by n matrix where m corresponds to number of observations, and n corresponds to number of features
+# calculate adjacency matrix where input xxDist is the distance matrix of the data using robust mahalanobis distance,
+# input StepSize as 1, and input Nbin as 200
+StepSize = 1
+Nbin = 200
+
+adj = cal_adjM_cutOff(xxDist, StepSize, Nbin)    
+y_pred = clustering_(data, adj)
+
+
+
