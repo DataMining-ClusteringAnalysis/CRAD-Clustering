@@ -9,11 +9,15 @@ Python implementation of CRAD clustering algorithm (CRAD.py) and extended DBSCAN
 
 For CRAD-Clustering:
 
-Call the function cal_adjM_cutOff(xxDist, StepSize, Nbin) to calculate adjancey matrix
+Call the function `cal_adjM_cutOff(xxDist, StepSize, Nbin)` to calculate adjancey matrix
 where 
+
 Inputs:
+
 xxDist - A distance matrix using robust mahalanobis distance 
+
 StepSize - Maximum steps of neighborhood you check in histogram to find optimal cut-off parameter
+
 Nbin - Number of bin in histogram to find optimal cut-off parameter
 Outputs:
 An adjancey matrix
