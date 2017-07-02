@@ -88,6 +88,8 @@ def dfs(n, cl, adj, label):
 				dfs(adj[n][j], cl, adj, label)
 
 	return
+
+
 # clustering algorithm CRAD
 def clustering_(data,adj):
     n = data.shape[0]
